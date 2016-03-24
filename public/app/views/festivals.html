@@ -46,7 +46,7 @@
 </div>
 </div>
 
-<div class="well" ng-repeat="festival in festivals | filter:{title:search} track by festival._id">
+<div class="well" ng-repeat="festival in festivals | filter:{name:search} track by festival._id">
   <h1>{{festival.name}}</h1>
   <a ng-href="/festivals/{{festival._id}}">Permalink</a>
   <h2>{{festival.date}}</h2>
