@@ -1,4 +1,4 @@
-var app = angular.module('RecipeApp', ['ui.router', 'RecipeCtrls', 'ui.bootstrap']);
+var app = angular.module('FestoramaApp', ['ui.router', 'FestivalCtrls', 'ui.bootstrap']);
 
 app.config([
   '$stateProvider',
@@ -11,17 +11,17 @@ app.config([
   $stateProvider
   .state('home', {
     url: '/',
-    templateUrl: 'app/views/recipes.html',
+    templateUrl: 'app/views/festivals.html',
     controller: 'HomeCtrl'
   })
   .state('newRecipe', {
     url: '/recipes/new',
-    templateUrl: 'app/views/newRecipe.html',
+    templateUrl: 'app/views/newFestival.html',
     controller: 'NewCtrl'
   })
   .state('recipeShow', {
     url: '/recipes/:id',
-    templateUrl: 'app/views/showRecipe.html',
+    templateUrl: 'app/views/showFestival.html',
     controller: 'ShowCtrl'
   })
   .state('signup', {
