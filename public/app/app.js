@@ -14,13 +14,13 @@ app.config([
     templateUrl: 'app/views/festivals.html',
     controller: 'HomeCtrl'
   })
-  .state('newRecipe', {
-    url: '/recipes/new',
+  .state('newFestival', {
+    url: '/festivals/new',
     templateUrl: 'app/views/newFestival.html',
     controller: 'NewCtrl'
   })
-  .state('recipeShow', {
-    url: '/recipes/:id',
+  .state('festivalShow', {
+    url: '/festivals/:id',
     templateUrl: 'app/views/showFestival.html',
     controller: 'ShowCtrl'
   })
