@@ -11,8 +11,12 @@ app.config([
   $stateProvider
   .state('home', {
     url: '/',
-    templateUrl: 'app/views/festivals.html',
-    controller: 'HomeCtrl'
+    templateUrl: 'app/views/home.html'
+  })
+  .state('festival',{
+    url: '/festivals',
+    templateUrlL 'app/views/festivals.html',
+    constroller: 'FestCtrl'
   })
   .state('newFestival', {
     url: '/festivals/new',
