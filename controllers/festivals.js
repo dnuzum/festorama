@@ -22,6 +22,11 @@ router.route('/:id')
       if (err) return res.status(500).send(err);
       res.send(festival);
     });
+  })
+  .delete(function(req, res) {
+    Festival.findByIdAndRemove(req.params.id, function(err) {
+      if (err) return res.status(500).send(err);
+    });
   });
 
 module.exports = router;
