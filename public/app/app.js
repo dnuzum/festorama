@@ -13,9 +13,9 @@ app.config([
     url: '/',
     templateUrl: 'app/views/home.html'
   })
-  .state('festival',{
+  .state('festival', {
     url: '/festivals',
-    templateUrlL 'app/views/festivals.html',
+    templateUrl: 'app/views/festivals.html',
     constroller: 'FestCtrl'
   })
   .state('newFestival', {
