@@ -1,0 +1,28 @@
+{
+  "name": "festorama",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "express-jwt": "^3.3.0",
+    "jsonwebtoken": "^5.7.0",
+    "mongoose": "^4.4.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnuzum/festorama.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dnuzum/festorama/issues"
+  },
+  "homepage": "https://github.com/dnuzum/festorama#readme",
+  "description": ""
+}
