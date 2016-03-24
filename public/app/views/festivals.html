@@ -5,6 +5,7 @@
     background-position: center 5%;
     background-size: auto;
     background-repeat: no-repeat;
+    background-attachment: scroll;
   }
   h1 {
     text-align: center;
@@ -12,8 +13,6 @@
     font-weight: bold;
     font-size: 96px;
     color: #FEFE65;
-    /*-webkit-text-stroke-width: .2px;
-    -webkit-text-stroke-color: #FEFE65;*/
     margin-top: 5%;
     margin-bottom: -1%;
     text-shadow: 0 8px 5px rgba(0,0,0,1.5);
@@ -24,7 +23,7 @@
   opacity: 0.9;
   border: 0;
   border-color: #00FFFF;
-  width: 320px;
+  width: 75%;
   margin: 5% auto;
   color: #FEFE65;
   text-align: center;
@@ -38,13 +37,6 @@
 
 <h1>Festivals</h1>
 <legend></legend>
-<div class="well">
-<div class="form-group">
-  <label for="search">Search for festivals</label>
-  <input type="text" class="form-control" id="search" ng-model="search">
-  <a href="/festivals/new" class="btn btn-success" id="srchbtn">New Festival</a>
-</div>
-</div>
 
 <div class="well" ng-repeat="festival in festivals | filter:{name:search} track by festival._id">
   <h1>{{festival.name}}</h1>
