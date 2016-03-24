@@ -1,14 +1,47 @@
+<style>
+  body {
+    font-family: 'Khand', sans-serif;
+    background-image: url("http://images2.fanpop.com/images/photos/3300000/Bender-futurama-3305909-1280-960.jpg");
+    background-position: center 5%;
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+
+  .form-group {
+    text-align: right;
+  }
+
+  legend {
+    text-align: center;
+    font-size: 78px;
+    color: #DAE5EB;
+  }
+
+  .well {
+    background-color: #6E8192;
+    border: 0;
+    border-color: #00FFFF;
+    width: 320px;
+    margin: 5% auto;
+    color: #F3F7C2;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0;
+}
+
+</style>
+
 <form ng-submit="userLogin()">
   <legend>Login</legend>
-
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="test@test.com" ng-model="user.email">
+  <div class="well">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="test@test.com" ng-model="user.email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="********" ng-model="user.password">
+    </div>
+     <button type="submit" class="btn btn-primary">Login</button>
   </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="********" ng-model="user.password">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Login</button>
 </form>
