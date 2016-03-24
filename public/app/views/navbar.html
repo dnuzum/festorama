@@ -1,8 +1,9 @@
 <style>
 
 .bar {
-  border: none;
+  border: 0px;
   font-family: 'Khand', sans-serif;
+  color: white !important;
 }
 
 #logo {
@@ -10,14 +11,23 @@
   width: 40px;
   margin-top: 0;
   text-align: top;
+  font-size: 20px;
 
 }
 
+#nav {
+    border: none;
+    background: none;
+}
 
+a {
+  font-size: 25px;
+  color: #DAE5EB !important; 
+}
 
 </style>
 
-<nav class="navbar navbar-default" role="navigation" ng-controller="NavCtrl">
+<nav id="nav" class="navbar navbar-default" role="navigation" ng-controller="NavCtrl">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
