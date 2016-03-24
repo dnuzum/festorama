@@ -1,23 +1,23 @@
-angular.module('RecipeCtrls', ['RecipeServices'])
-.controller('HomeCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
-  $scope.recipes = [];
+angular.module('FestivalCtrls', ['FestivalServices'])
+.controller('HomeCtrl', ['$scope', 'Festival', function($scope, Festival) {
+  $scope.festivals = [];
 
-  Recipe.query(function success(data) {
-    $scope.recipes = data;
+  Festival.query(function success(data) {
+    $scope.festivals = data;
   }, function error(data) {
     console.log(data);
   });
 
-  $scope.deleteRecipe = function(id, recipesIdx) {
-    Recipe.delete({id: id}, function success(data) {
-      $scope.recipes.splice(recipesIdx, 1);
+  $scope.deleteFestival = function(id, festivalsIdx) {
+    Festival.delete({id: id}, function success(data) {
+      $scope.festivals.splice(festivalsIdx, 1);
     }, function error(data) {
       console.log(data);
     });
   }
 }])
-.controller('ShowCtrl', ['$scope', '$stateParams', 'Recipe', function($scope, $stateParams, Recipe) {
-  $scope.recipe = {};
+.controller('ShowCtrl', ['$scope', '$stateParams', 'Festival', function($scope, $stateParams, Festival) {
+  $scope.festival = {};
 
   Recipe.get({id: $stateParams.id}, function success(data) {
     $scope.recipe = data;
@@ -25,15 +25,17 @@ angular.module('RecipeCtrls', ['RecipeServices'])
     console.log(data);
   });
 }])
-.controller('NewCtrl', ['$scope', '$location', 'Recipe', function($scope, $location, Recipe) {
-  $scope.recipe = {
-    title: '',
+.controller('NewCtrl', ['$scope', '$location', 'Festival', function($scope, $location, Festival) {
+  $scope.festival = {
+    name: '',
     description: '',
-    image: ''
+    date: '',
+    photo: '',
+    url: ''
   };
 
-  $scope.createRecipe = function() {
-    Recipe.save($scope.recipe, function success(data) {
+  $scope.createFestival = function() {
+    Festival.save($scope.festival, function success(data) {
       $location.path('/');
     }, function error(data) {
       console.log(data);
@@ -52,8 +54,10 @@ angular.module('RecipeCtrls', ['RecipeServices'])
 }])
 .controller('SignupCtrl', ['$scope', '$http', '$location', 'Alerts', function($scope, $http, $location) {
   $scope.user = {
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    phone: ''
   };
   $scope.userSignup = function() {
     //to implement

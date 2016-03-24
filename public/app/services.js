@@ -1,18 +1,18 @@
-angular.module('RecipeServices', ['ngResource'])
-.factory('Recipe', ['$resource', function($resource) {
-  return $resource('/api/recipes/:id');
+angular.module('FestivalServices', ['ngResource'])
+.factory('Festival', ['$resource', function($resource) {
+  return $resource('/api/festivals/:id');
 }])
 
 .factory('Auth', ['$window', function($window) {
   return {
     saveToken: function(token) {
-      $window.localStorage['secretrecipies-token'] = token;
+      $window.localStorage['secretfestivals-token'] = token;
     },
     getToken: function() {
-      return $window.localStorage['secretrecipies-token'];
+      return $window.localStorage['secretfestivals-token'];
     },
     removeToken: function() {
-      $window.localStorage.removeItem('secretrecipies-token');
+      $window.localStorage.removeItem('secretfestivals-token');
     },
     isLoggedIn: function() {
       var token = this.getToken();

@@ -9,13 +9,13 @@ var secret = "mysupersecretpassword";
 
 var mongoose = require('mongoose');
 var User = require('./models/user');
-mongoose.connect('mongodb://localhost/recipes');
+mongoose.connect('mongodb://localhost/festorama');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/recipes', expressJWT({secret: secret}));
+app.use('/api/festivals', expressJWT({secret: secret}));
 app.use('/api/users', expressJWT({secret: secret})
 .unless({path: ['/api/users'], method: 'post'}));
 
@@ -25,7 +25,7 @@ app.use(function (err, req, res, next) {
   }
 });
 
-app.use('/api/recipes', require('./controllers/recipes'));
+app.use('/api/festivals', require('./controllers/festivals'));
 app.use('/api/users', require('./controllers/users'));
 
 app.post('/api/auth', function(req, res) {
