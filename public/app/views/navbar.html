@@ -1,3 +1,21 @@
+<style>
+
+.bar {
+  border: none;
+  font-family: 'Khand', sans-serif;
+}
+
+#logo {
+  height: 40px;
+  width: 40px;
+  margin-top: 0;
+  text-align: top;
+
+}
+
+
+
+</style>
 
 <nav class="navbar navbar-default" role="navigation" ng-controller="NavCtrl">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -8,11 +26,12 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/">Festivals</a>
+    <a class="bar navbar-brand" href="/">Festorama </a>
+   <!--  <a class="navbar-brand" href="/"><img id='logo' src='http://icons.iconseeker.com/png/fullsize/futurama-vol-1/bender-1.png'/> </a> -->
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <div class="bar collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="/signup" ng-hide="Auth.isLoggedIn()">Signup</a></li>
       <li><a href="/login" ng-hide="Auth.isLoggedIn()">Login</a></li>
