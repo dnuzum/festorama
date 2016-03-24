@@ -1,10 +1,68 @@
-<h1>{{festival.title}}</h1>
+<style>
+body {
+    background-image: url("https://images.alphacoders.com/759/75911.jpg");
+    font-family: 'Khand', sans-serif;
+    background-position: center 5%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+h1 {
+    text-align: center;
+    font-family: 'Khand', sans-serif;
+    font-weight: bold;
+    font-size: 96px;
+    color: #FEFE65;
+    margin-top: 5%;
+    margin-bottom: -1%;
+    text-shadow: 0 8px 5px rgba(0,0,0,1.5);
+  }
+
+ h2{
+ 	text-align: center;
+ 	font-family: 'Khand', sans-serif;
+ 	font-size: 3em;
+ 	color: #FEFE65;
+ 	text-shadow: 2px 2px #000;
+ 	font-weight: bold;
+ }
+
+.well {
+  background-color: #5ce088;
+  opacity: 0.9;
+  border: 0;
+  border-color: #00FFFF;
+  width: 75%;
+  margin: 5% auto;
+  color: #FEFE65;
+  text-align: center;
+  font-size: 28px;
+}
+
+.title{
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+}
+
+img{
+  width: 95%;
+  margin: 0 auto;
+}
+
+</style>
+
+<div class="title">
+	<h1>{{festival.name}}</h1>
+	<h2>{{festival.date}}</h2>
+</div>
 
 <div class="well">
   <p>
     {{festival.description}}
   </p>
-  <img class="img-responsive" ng-src="{{festival.image}}">
+  <img class="img-responsive" src="{{festival.photo}}"/>
 </div>
 
-<a href="/" class="btn btn-primary">&larr; Back</a>
+<a href="/festivals" class="btn btn-primary">&larr; Back</a>
