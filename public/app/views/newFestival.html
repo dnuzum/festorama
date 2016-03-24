@@ -2,17 +2,25 @@
 
 <form ng-submit="createFestival()">
   <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" ng-model="festival.title">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="title" ng-model="festival.name">
   </div>
   <div class="form-group">
     <label for="description">Description</label>
     <textarea class="form-control" id="description" ng-model="festival.description"></textarea>
   </div>
+ 
   <div class="form-group">
-    <label for="image">Image Link</label>
-    <input type="url" class="form-control" id="image" placeholder="" ng-model="festival.image">
+    <label for="date">Date</label>
+    <input type="url" class="form-control" id="image" placeholder="" ng-model="festival.date">
   </div>
-
+  <div class="form-group">
+    <label for="photo">Photo Link</label>
+    <input type="url" class="form-control" id="image" placeholder="" ng-model="festival.photo">
+  </div>
+  <div class="form-group">
+    <label for="url">Url</label>
+    <input type="url" class="form-control" id="image" placeholder="" ng-model="festival.url">
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
