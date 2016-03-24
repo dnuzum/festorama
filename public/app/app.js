@@ -16,7 +16,7 @@ app.config([
   .state('festival', {
     url: '/festivals',
     templateUrl: 'app/views/festivals.html',
-    constroller: 'FestCtrl'
+    controller: 'FestCtrl'
   })
   .state('newFestival', {
     url: '/festivals/new',
