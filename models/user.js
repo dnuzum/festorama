@@ -13,8 +13,8 @@ UserSchema.set('toJSON', {
   transform: function(doc, ret, options) {
     var returnJson = {
       id: ret._id,
-      email: ret.email,
       name: ret.name,
+      email: ret.email,
       phone: ret.phone,
       fests: ret.fests
     };
