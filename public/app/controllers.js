@@ -1,5 +1,5 @@
 angular.module('FestivalCtrls', ['FestivalServices'])
-.controller('HomeCtrl', ['$scope', 'Festival', function($scope, Festival) {
+.controller('FestCtrl', ['$scope', 'Festival', function($scope, Festival) {
   $scope.festivals = [];
 
   Festival.query(function success(data) {
@@ -19,8 +19,8 @@ angular.module('FestivalCtrls', ['FestivalServices'])
 .controller('ShowCtrl', ['$scope', '$stateParams', 'Festival', function($scope, $stateParams, Festival) {
   $scope.festival = {};
 
-  Recipe.get({id: $stateParams.id}, function success(data) {
-    $scope.recipe = data;
+  Festival.get({id: $stateParams.id}, function success(data) {
+    $scope.festival = data;
   }, function error(data) {
     console.log(data);
   });
@@ -42,17 +42,16 @@ angular.module('FestivalCtrls', ['FestivalServices'])
     });
   }
 }])
-.controller('NavCtrl', ['$scope', 'Auth', '$state', 'Alerts', function($scope, Auth, $state, Alerts) {
+.controller('NavCtrl', ['$scope', 'Auth', '$state', function($scope, Auth, $state) {
   $scope.Auth = Auth;
 
   $scope.logout = function() {
     //to implement
     Auth.removeToken();
-    Alerts.add('success', 'Logged out!');
     $state.reload();
   }
 }])
-.controller('SignupCtrl', ['$scope', '$http', '$location', 'Alerts', function($scope, $http, $location) {
+.controller('SignupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
   $scope.user = {
     name: '',
     email: '',
@@ -62,14 +61,13 @@ angular.module('FestivalCtrls', ['FestivalServices'])
   $scope.userSignup = function() {
     //to implement
     $http.post('/api/users', $scope.user).then(function success(res) {
-      Alerts.add('success', 'Signed up!'),
       $location.path('/');
     }, function error(res) {
       console.log(res);
     });
   }
 }])
-.controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
+.controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', function($scope, $http, $location, Auth) {
   $scope.user = {
     email: '',
     password: ''
@@ -78,15 +76,9 @@ angular.module('FestivalCtrls', ['FestivalServices'])
     //to implement
     $http.post('/api/auth', $scope.user).then(function success(res) {
       Auth.saveToken(res.data.token);
-      Alerts.add('success', 'You are logged in!');
       $location.path('/');
     }, function error(res) {
       console.log(res);
     })
   }
-}])
-
-.controller('AlertsCtrl', ['$scope', 'Alerts', function($scope, Alerts) {
-  $scope.alerts = Alerts;
-  $scope.alerts = Alerts.get();
 }]);
