@@ -44,7 +44,7 @@ img{
 
 <div class="well" ng-repeat="festival in festivals | filter:{name:search} track by festival._id">
   <h1>{{festival.name}}</h1>
-  <a ng-href="/festivals/{{festival._id}}">Link</a>
+  <a ng-href="/festivals/{{festival._id}}">More Info Here</a>
   <h2>{{festival.date}}</h2>
   <h3><a href="{{festival.url}}">{{festival.url}}</a></h3>
   <img src="{{festival.photo}}">

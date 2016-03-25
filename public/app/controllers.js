@@ -61,7 +61,7 @@ angular.module('FestivalCtrls', ['FestivalServices'])
   $scope.userSignup = function() {
     //to implement
     $http.post('/api/users', $scope.user).then(function success(res) {
-      $location.path('/');
+      $location.path('/login');
     }, function error(res) {
       console.log(res);
     });
@@ -76,7 +76,7 @@ angular.module('FestivalCtrls', ['FestivalServices'])
     //to implement
     $http.post('/api/auth', $scope.user).then(function success(res) {
       Auth.saveToken(res.data.token);
-      $location.path('/');
+      $location.path('/festivals');
     }, function error(res) {
       console.log(res);
     })
